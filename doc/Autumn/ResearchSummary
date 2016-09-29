@@ -1,0 +1,17 @@
+Reference 1:
+Comparison of Learning Algorithms for Handwritten Digit Recognition
+http://yann.lecun.com/exdb/publis/pdf/lecun-95b.pdf
+
+Reference 2:
+Deep, Big, Simple Neural Nets for Handwritten Digit Recognition
+http://www.mitpressjournals.org/doi/abs/10.1162/NECO_a_00052#.V-nF6igrI2x
+
+Both papers discussed the relative usefulness of various learning algorithms for recognizing handwritten digits (0-9).
+Reference 1 compared the raw error data (how often the learned algorithm was wrong) of several types of learning algorithms,
+including neural networks, pairwise linear classifiers, and polynomial classifiers. They concluded that the best
+algorithm of the ones they compared was a convolutional network called LeNet 4. This was also the most complex algorithm
+among the ones compared, and achieved an error rate of approximately 0.7%.
+Reference 2 took a different approach, instead using a simple neural network. This network was incredibly large and incredibly
+deep, and, as such, would not have been feasible ten years ago. However, the network was remarkably accurate, with an
+error rate of only 0.35%. The author uses this result to arue that the complexity of an algorithm is less important than
+the speed of the hardware available.
