@@ -8,6 +8,7 @@ My input space is an image with words on it.
 My output space is a text document with those words in it.
 
 
-There are whole databases for this problem. One such database is here: http://www.fki.inf.unibe.ch/databases/iam-handwriting-database
+There are whole databases for this problem. One such database is here: https://www.nist.gov/srd/nist-special-database-19
+I will be using the data found in the by-merge folder.
 
 Because this problem deals with classifying images as various characters, I will use supervised learning.
