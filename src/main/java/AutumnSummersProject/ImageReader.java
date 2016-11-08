@@ -13,8 +13,13 @@ public class ImageReader {
     //interprets an image based on the string representation of it's location
     public ImageReader(String location) {
         try {
-            File inputFile = new File(location);
-            image = ImageIO.read(inputFile);
+            //System.out.print(location);
+            //location = location.substring(5);
+            String loc = "data/AutumnSummersData/" + location;
+            //System.out.print(loc);
+            File inputFile = new File(loc);
+            image = ImageIO.read(inputFile)
+            //image = ImageIO.read(inputFile).getData().getDataBuffer().getOffset();
         }
         catch (Exception e){}
     }
