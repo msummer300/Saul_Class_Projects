@@ -1,6 +1,7 @@
 package CMPS_3240_6240Fall16.AutumnSummersProject
 
 import java.awt.image.BufferedImage
+import AutumnSummersProject.ImageReader
 
 import edu.illinois.cs.cogcomp.saul.datamodel.DataModel
 
@@ -17,10 +18,11 @@ object CharRecognitionDataModel extends DataModel{
     }
   }
 
-  val location = property(character){
+  val image = property(character){
     x: String => {
       val tokens = x.split(" ")
-      tokens(1)
+      val buffer: ImageReader = new ImageReader(tokens(1))
+      buffer.image
     }
   }
 

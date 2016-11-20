@@ -9,15 +9,18 @@ import java.awt.image.BufferedImage
 import scala.collection.JavaConversions._
 import AutumnSummersProject.FileReader
 import AutumnSummersProject.ImageReader
-import CMPS_3240_6240Fall16.AutumnSummersProject.CharRecognitionClassifiers._
+import CMPS_3240_6240Fall16.AutumnSummersProject.CharRecognitionClassifiers.{CharRecognitionClassifier, _}
 object CharRecognitionApp{
 
   def main(args: Array[String]): Unit ={
-    val testData = new FileReader("data/AutumnSummersData/newTest.txt").letters
+    val trainData = new FileReader("data/AutumnSummersData/mergeTrain.txt").letters
+    val testData = new FileReader("data/AutumnSummersData/mergeTest.txt").letters
 
-    CharRecognitionDataModel.character.populate(testData)
+    CharRecognitionDataModel.character.populate(trainData)
+    CharRecognitionDataModel.character.populate(testData, false)
 
-    CharRecognitionClassifiers.test()
+    CharRecognitionClassifier.learn(5)
+    CharRecognitionClassifier.test()
 
   }
 
