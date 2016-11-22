@@ -89,4 +89,60 @@ object CharRecognitionDataModel extends DataModel{
       buffer.imgI
     }
   }
+
+  val imageJ = property(character){
+    x: String => {
+      val tokens = x.split(" ")
+      val buffer: ImageReader = new ImageReader(tokens(1))
+      buffer.imgJ
+    }
+  }
+
+  val imageP = property(character){
+    x: String => {
+      val tokens = x.split(" ")
+      val buffer: ImageReader = new ImageReader(tokens(1))
+      buffer.imgP
+    }
+  }
+
+  val imageK = property(character){
+    x: String => {
+      val tokens = x.split(" ")
+      val buffer: ImageReader = new ImageReader(tokens(1))
+      buffer.imgK
+    }
+  }
+
+  val imageL = property(character){
+    x: String => {
+      val tokens = x.split(" ")
+      val buffer: ImageReader = new ImageReader(tokens(1))
+      buffer.imgL
+    }
+  }
+
+  val imageM = property(character){
+    x: String => {
+      val tokens = x.split(" ")
+      val buffer: ImageReader = new ImageReader(tokens(1))
+      buffer.imgM
+    }
+  }
+
+  val imageN = property(character){
+    x: String => {
+      val tokens = x.split(" ")
+      val buffer: ImageReader = new ImageReader(tokens(1))
+      buffer.imgN
+    }
+  }
+
+  val imageO = property(character){
+    x: String => {
+      val tokens = x.split(" ")
+      val buffer: ImageReader = new ImageReader(tokens(1))
+      buffer.imgO
+    }
+  }
 }

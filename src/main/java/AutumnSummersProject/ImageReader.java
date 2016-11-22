@@ -29,6 +29,13 @@ public class ImageReader {
     public String imgG;
     public String imgH;
     public String imgI;
+    public String imgJ;
+    public String imgK;
+    public String imgL;
+    public String imgM;
+    public String imgN;
+    public String imgO;
+    public String imgP;
     public String [] img_array;
 
     //interprets an image based on the string representation of it's location
@@ -91,15 +98,22 @@ public class ImageReader {
             Mat result = original.submat(rect_min);
 
 */
-            Mat A = image.submat(0, 43, 0, 43);
-            Mat B = image.submat(43, 85, 0, 43);
-            Mat C = image.submat(85, 128, 0, 43);
-            Mat D = image.submat(0, 43, 43, 85);
-            Mat E = image.submat(43, 85, 43, 85);
-            Mat F = image.submat(85, 128, 43, 85);
-            Mat G = image.submat(0, 43, 85, 128);
-            Mat H = image.submat(43, 85, 85, 128);
-            Mat I = image.submat(85, 128, 85, 128);
+            Mat A = image.submat(0, 32, 0, 32);
+            Mat B = image.submat(32, 64, 0, 32);
+            Mat C = image.submat(64, 96, 0, 32);
+            Mat D = image.submat(96, 128, 0, 32);
+            Mat E = image.submat(0, 32, 32, 64);
+            Mat F = image.submat(32, 64, 32, 64);
+            Mat G = image.submat(64, 96, 32, 64);
+            Mat H = image.submat(96, 128, 32, 64);
+            Mat I = image.submat(0, 32, 64, 96);
+            Mat J = image.submat(32, 64, 64, 96);
+            Mat K = image.submat(64, 96, 64, 96);
+            Mat L = image.submat(96, 128, 64, 96);
+            Mat M = image.submat(0, 32, 96, 128);
+            Mat N = image.submat(32, 64, 96, 128);
+            Mat O = image.submat(64, 96, 96, 128);
+            Mat P = image.submat(96, 128, 96, 128);
 
             imgA = A.dump();
             imgB = B.dump();
@@ -110,6 +124,14 @@ public class ImageReader {
             imgG = G.dump();
             imgH = H.dump();
             imgI = I.dump();
+            imgJ = J.dump();
+            imgK = K.dump();
+            imgL = L.dump();
+            imgM = M.dump();
+            imgN = N.dump();
+            imgO = O.dump();
+            imgP = P.dump();
+
 
             /*
             //this is where it becomes my original code again
