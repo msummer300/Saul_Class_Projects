@@ -17,21 +17,21 @@ public class CharRecognitionKNN{
     private int maxLength = 3;
     public String value;
 
-    /*public CharRecognitionKNN(String letter, FileReader train){
-        BufferedImage img = new ImageReader(letter).image;
+    public CharRecognitionKNN(String letter, FileReader train){
+        String image = new ImageReader(letter).img;
 
-        value = classifyLetter(img, train);
+        value = classifyLetter(image, train);
     }
 
-    private ArrayList<Neighbor> findNearestNeighbors(BufferedImage letter, FileReader train){
+    private ArrayList<Neighbor> findNearestNeighbors(String letter, FileReader train){
         ArrayList<Neighbor> NearestNeighbors = new ArrayList<>();
         int i;
         int percentage;
         for(i=0; i < train.letters.size(); i++){
             String [] location = train.letters.get(i).split(" ");
             ImageReader processImage = new ImageReader(location[1]);
-            BufferedImage img = processImage.image;
-            percentage = CompareLetters.compare(letter, img);
+            String image = processImage.img;
+            percentage = CompareLetters.compare(letter, image);
             if(NearestNeighbors.isEmpty()){
                 NearestNeighbors.add(0, new Neighbor(percentage, location[0]));
             }
@@ -50,7 +50,7 @@ public class CharRecognitionKNN{
         return NearestNeighbors;
     }
 
-    private String classifyLetter(BufferedImage letter, FileReader train){
+    private String classifyLetter(String letter, FileReader train){
         ArrayList<Neighbor> Neighbors = findNearestNeighbors(letter, train);
         int [] values = new int[26];
         int current_letter;
@@ -73,5 +73,5 @@ public class CharRecognitionKNN{
             }
         }
         return max_letter;
-    }*/
+    }
 }

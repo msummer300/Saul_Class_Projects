@@ -20,6 +20,7 @@ import java.util.List;
  */
 public class ImageReader {
     public String img;
+    public String [] img_array;
 
     //interprets an image based on the string representation of it's location
     public ImageReader(String location) {
@@ -35,7 +36,7 @@ public class ImageReader {
             eightBitImage.convertTo(image, CvType.CV_8UC1);
             Mat original = image.clone();
 
-            Imgproc.threshold(image, image, 100, 128, Imgproc.THRESH_BINARY_INV);
+            //Imgproc.threshold(image, image, 100, 128, Imgproc.THRESH_BINARY_INV);
 
 
 
@@ -67,10 +68,6 @@ public class ImageReader {
                 }
             }
 
-
-
-            System.out.println(String.valueOf(rect_min.height));
-            System.out.println(String.valueOf(rect_min.width));
             if(rect_min.height > rect_min.width){
                 rect_min.width = rect_min.height;
                 rect_min.height = rect_min.height;
@@ -80,11 +77,8 @@ public class ImageReader {
                 rect_min.width = rect_min.width;
             }
 
-
-            System.out.println(String.valueOf(rect_min.height));
-            System.out.println(String.valueOf(rect_min.width));
             Mat result = original.submat(rect_min);
-            System.out.println("Hi?");
+
 */
             //this is where it becomes my original code again
             img = "";
@@ -93,20 +87,11 @@ public class ImageReader {
             Mat resized = new Mat();
             Imgproc.resize(image, resized, sz);
 
-            /*for(int i = 0; i < resized.height(); i++){
-                for(int j = 0; j < resized.width(); j++){
-                    current = String.valueOf(resized.);
-                    img = img.concat(current);
-                    img = img.concat(" ");
-                }
-                img = img.concat("/n");
-            }
-            */
-            img = image.dump();
+            img = resized.dump();
             //System.out.println(img);
 
         }
-        catch (Exception e){System.out.println("Threw an exception");}
+        catch (Exception e){}
     }
 
 }

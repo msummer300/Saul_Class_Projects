@@ -5,7 +5,9 @@ import edu.illinois.cs.cogcomp.lbjava.learn.{SparseAveragedPerceptron, SparseNet
 import edu.illinois.cs.cogcomp.saul.classifier.Learnable
 import weka.classifiers.`lazy`.IBk
 import edu.illinois.cs.cogcomp.saul.learn.SaulWekaWrapper
+import org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D
 import weka.classifiers.bayes.NaiveBayes
+import weka.core.{ChebyshevDistance, EuclideanDistance, ManhattanDistance}
 
 
 /**
@@ -17,18 +19,20 @@ object CharRecognitionClassifiers {
   import AutumnSummersProject.CharRecognitionKNN
 
   //def label = letter
-  // val train = new FileReader("data/AutumnSummersData/newTrain.txt")
+  //val train = new FileReader("data/AutumnSummersData/newTrain.txt")
   //val test_set = new FileReader("data/AutumnSummersData/newTest.txt").letters
 
   object CharRecognitionClassifier extends Learnable[String] (character) {
     def label = letter
-    override lazy val classifier = new SaulWekaWrapper(new IBk(21))
+    def search: IBk = new IBk(21)
+    search.getNearestNeighbourSearchAlgorithm().setDistanceFunction(new ChebyshevDistance())
+    override lazy val classifier = new SaulWekaWrapper(search)
     //override lazy val classifier = new SparseNetworkLearner()
     override def feature = using(image)
   }
 
-  /*
-    def test() = {
+
+    /*def test() = {
       var correct: Array[Int] = new Array[Int](26)
       var actual: Array[Int] = new Array[Int](26)
       for( i <- 0 to 25){
@@ -66,8 +70,8 @@ object CharRecognitionClassifiers {
         print("\n")
       }
 
-    }
-  */
+    }*/
+
 
 
 }

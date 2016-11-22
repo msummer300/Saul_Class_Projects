@@ -12,15 +12,15 @@ public class CompareLetters {
     /*
     Compares two images and returns a double representing the percentage of similarity
      */
-    public static int compare(BufferedImage letter1, BufferedImage letter2) {
-        DataBuffer buffer1 = letter1.getData().getDataBuffer();
-        DataBuffer buffer2 = letter2.getData().getDataBuffer();
+    public static int compare(String letter1, String letter2) {
+        //DataBuffer buffer1 = letter1.getData().getDataBuffer();
+        //DataBuffer buffer2 = letter2.getData().getDataBuffer();
         try {
-            if (buffer1.getSize() != buffer2.getSize()) {
+            if (letter1.length() != letter2.length()) {
                 return -1;
             } else {
-                for (int i = 0; i < buffer1.getSize(); i++) {
-                    if (buffer1.getElem(i) == buffer2.getElem(i)) {
+                for (int i = 0; i < letter1.length(); i++) {
+                    if (letter1.charAt(i) == letter2.charAt(i)) {
                         count++;
                     }
                 }
