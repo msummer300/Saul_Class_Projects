@@ -27,8 +27,7 @@ object CharRecognitionClassifiers {
     def search: IBk = new IBk(21)
     search.getNearestNeighbourSearchAlgorithm().setDistanceFunction(new ChebyshevDistance())
     override lazy val classifier = new SaulWekaWrapper(search)
-    //override lazy val classifier = new SparseNetworkLearner()
-    override def feature = using(image)
+    override def feature = using(imageA, imageB, imageC, imageD, imageE, imageF, imageG, imageH, imageI)
   }
 
 

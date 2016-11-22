@@ -20,6 +20,15 @@ import java.util.List;
  */
 public class ImageReader {
     public String img;
+    public String imgA;
+    public String imgB;
+    public String imgC;
+    public String imgD;
+    public String imgE;
+    public String imgF;
+    public String imgG;
+    public String imgH;
+    public String imgI;
     public String [] img_array;
 
     //interprets an image based on the string representation of it's location
@@ -49,6 +58,8 @@ public class ImageReader {
 
 
             Imgproc.findContours(image, contours, hierarchy, Imgproc.RETR_CCOMP, Imgproc.CHAIN_APPROX_SIMPLE);
+
+            Imgproc.drawContours(image, contours, -1, new Scalar(0, 0, 255));
 
 
             /*double d_min = Double.MAX_VALUE;
@@ -80,6 +91,27 @@ public class ImageReader {
             Mat result = original.submat(rect_min);
 
 */
+            Mat A = image.submat(0, 43, 0, 43);
+            Mat B = image.submat(43, 85, 0, 43);
+            Mat C = image.submat(85, 128, 0, 43);
+            Mat D = image.submat(0, 43, 43, 85);
+            Mat E = image.submat(43, 85, 43, 85);
+            Mat F = image.submat(85, 128, 43, 85);
+            Mat G = image.submat(0, 43, 85, 128);
+            Mat H = image.submat(43, 85, 85, 128);
+            Mat I = image.submat(85, 128, 85, 128);
+
+            imgA = A.dump();
+            imgB = B.dump();
+            imgC = C.dump();
+            imgD = D.dump();
+            imgE = E.dump();
+            imgF = F.dump();
+            imgG = G.dump();
+            imgH = H.dump();
+            imgI = I.dump();
+
+            /*
             //this is where it becomes my original code again
             img = "";
             String current;
@@ -87,8 +119,8 @@ public class ImageReader {
             Mat resized = new Mat();
             Imgproc.resize(image, resized, sz);
 
-            img = resized.dump();
-            //System.out.println(img);
+            img = image.dump();
+            //System.out.println(img);*/
 
         }
         catch (Exception e){}
