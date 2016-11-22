@@ -22,7 +22,7 @@ object CharRecognitionDataModel extends DataModel{
     x: String => {
       val tokens = x.split(" ")
       val buffer: ImageReader = new ImageReader(tokens(1))
-      buffer.image
+      buffer.img
     }
   }
 
