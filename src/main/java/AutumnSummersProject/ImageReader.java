@@ -48,7 +48,7 @@ public class ImageReader {
             Mat hierarchy = new Mat();
 
 
-            Imgproc.findContours(image, contours, hierarchy, Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_SIMPLE);
+            Imgproc.findContours(image, contours, hierarchy, Imgproc.RETR_CCOMP, Imgproc.CHAIN_APPROX_SIMPLE);
 
 
             /*double d_min = Double.MAX_VALUE;
