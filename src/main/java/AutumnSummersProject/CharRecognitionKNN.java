@@ -17,7 +17,7 @@ public class CharRecognitionKNN{
     private int maxLength = 3;
     public String value;
 
-    public CharRecognitionKNN(String letter, FileReader train){
+    /*public CharRecognitionKNN(String letter, FileReader train){
         BufferedImage img = new ImageReader(letter).image;
 
         value = classifyLetter(img, train);
@@ -73,5 +73,5 @@ public class CharRecognitionKNN{
             }
         }
         return max_letter;
-    }
+    }*/
 }

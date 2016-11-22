@@ -13,8 +13,8 @@ import CMPS_3240_6240Fall16.AutumnSummersProject.CharRecognitionClassifiers.{Cha
 object CharRecognitionApp{
 
   def main(args: Array[String]): Unit ={
-    val trainData = new FileReader("data/AutumnSummersData/mergeTrain.txt").letters
-    val testData = new FileReader("data/AutumnSummersData/mergeTest.txt").letters
+    val trainData = new FileReader("data/AutumnSummersData/newTrain.txt").letters
+    val testData = new FileReader("data/AutumnSummersData/newTest.txt").letters
 
     CharRecognitionDataModel.character.populate(trainData)
     CharRecognitionDataModel.character.populate(testData, false)

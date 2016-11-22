@@ -22,7 +22,8 @@ object CharRecognitionClassifiers {
 
   object CharRecognitionClassifier extends Learnable[String] (character) {
     def label = letter
-    override lazy val classifier = new SaulWekaWrapper(new NaiveBayes())
+    //override lazy val classifier = new SaulWekaWrapper(new IBk(21))
+    override lazy val classifier = new SparseNetworkLearner()
     override def feature = using(image)
   }
 

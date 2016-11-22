@@ -1,5 +1,8 @@
 package AutumnSummersProject;
 
+import org.opencv.core.Mat;
+import org.opencv.imgproc.Imgproc;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBuffer;
@@ -14,6 +17,7 @@ public class ImageReader {
     //interprets an image based on the string representation of it's location
     public ImageReader(String location) {
         try {
+            Imgproc process = new Imgproc();
             DataBuffer buffer;
             String current;
             image = "";
@@ -22,9 +26,16 @@ public class ImageReader {
             buffer = ImageIO.read(inputFile).getData().getDataBuffer();
             for(int i=0; i < (buffer.getSize() - 1); i++){
                 current = String.valueOf(buffer.getElem(i));
-                image.concat(current);
-                image.concat(" ");
+                //System.out.println(current);
+                if(current.equals("0")){
+                    image = image.concat("000");
+                }
+                else{
+                    image = image.concat(current);
+                }
+                image = image.concat(" ");
             }
+            //System.out.println(image);
             //System.out.println("Processed image!");
         }
         catch (Exception e){}
